@@ -1,7 +1,7 @@
-var regimeTributario = 'Lucro Real';
-var atividadeEconomica = 'Indústria';
-var beneficioFiscal = 'Lei 6979 (Indústria)';
-var licitacao = 'Não';
+var regimeTributario = 'Simples Nacional';
+var atividadeEconomica = 'Comércio Varejista';
+var beneficioFiscal = 'Não Possuo';
+var licitacao = 'Sim';
 
 const atvIndustria = 1818.00;
 const rioLog = 2424.00;
@@ -15,77 +15,77 @@ const licitacaoS = 1818.00;
 //Identificando o Regime Tributário
 function conferirRegimeTributario() {
     if(regimeTributario == 'Lucro Presumido'){
-        regimeTributario = 1;
+        regimeTributario = 'Lucro Presumido';
     }
     else if(regimeTributario == 'Lucro Real'){
-        regimeTributario = 2;
+        regimeTributario = 'Lucro Real';
     }
     else if (regimeTributario == 'Simples Nacional') {
-        regimeTributario = 3;
+        regimeTributario = 'Simples Nacional';
     }
 }
 
 //Identificando o Atividade Econômica
 function conferirAtividadeEconomica() {
     if(atividadeEconomica == 'Indústria'){
-        atividadeEconomica = 1;
-        return atvIndustria;
+        atividadeEconomica = atvIndustria;
+        return atividadeEconomica;
     }
     else if(atividadeEconomica == 'Comércio Varejista'){
-        atividadeEconomica = 2;
-        return 0;
+        atividadeEconomica = 0;
+        return atividadeEconomica;
     }
     else if (atividadeEconomica == 'Comércio Atacadista') {
-        atividadeEconomica = 3;
-       return 0;
+        atividadeEconomica = 0;
+       return atividadeEconomica;
     }
     else if (atividadeEconomica == 'Prestação de Serviços') {
-        atividadeEconomica = 4;
-       return 0;
+        atividadeEconomica = 0;
+       return atividadeEconomica;
     }
 }
 
-//Identificando o Regime Tributário
+//Identificando o Benefício Fiscal
 function conferirBeneficioFiscal() {
     if(beneficioFiscal == 'Rio Log'){
-        beneficioFiscal = 1;
-        return rioLog;
+        beneficioFiscal = rioLog;
+        return beneficioFiscal;
     }
     else if(beneficioFiscal == 'Cartilha da Moda'){
-        beneficioFiscal = 2;
-        return cartilhaModa;
+        beneficioFiscal = cartilhaModa;
+        return beneficioFiscal;
     }
     else if (beneficioFiscal == 'Compete') {
-        beneficioFiscal = 3;
-        return compete;
+        beneficioFiscal = compete;
+        return beneficioFiscal;
     }
     else if (beneficioFiscal == 'Lei 6979 (Indústria)') {
-        beneficioFiscal = 4;
-        return leiInd;
+        beneficioFiscal = leiInd;
+        return beneficioFiscal;
     }
     else if (beneficioFiscal == 'Fármacos') {
-        beneficioFiscal = 5;
-        return farmacos;
+        beneficioFiscal = farmacos;
+        return beneficioFiscal;
     }
     else if (beneficioFiscal == 'Outros') {
-        beneficioFiscal = 6;
-        return outrosF;
+        beneficioFiscal = outrosF;
+        return beneficioFiscal;
     }
     else if (beneficioFiscal == 'Não Possuo') {
-        beneficioFiscal = 6;
-        return 0;
+        beneficioFiscal = 0;
+        return beneficioFiscal;
     }
 }
 
 //Identificando o Regime Tributário
 function conferirLicitacao() {
     if(licitacao == 'Sim'){
-        licitacao = 1;
-        return licitacaoS;
+        licitacao = licitacaoS;
+        return licitacao;
     }
     else if(licitacao == 'Não'){
-        licitacao = 2;
-        return 0;
+        licitacao = 0;
+        return licitacao;
     }
 }
 
@@ -95,13 +95,12 @@ conferirAtividadeEconomica();
 conferirBeneficioFiscal();
 conferirLicitacao();
 
-switch (regimeTributario) {
-    case 1:
-        return
-        break;
+// document.getElementById("captar").addEventListener("click", () => {
+//     var faturamento = document.getElementById("faturamento").value;
+//     console.log(faturamento)
+// })
 
-    default:
-        break;
-}
+console.log(beneficioFiscal + atividadeEconomica + licitacao);
 
-console.log(conferirAtividadeEconomica() + conferirBeneficioFiscal() + conferirLicitacao());
+
+
