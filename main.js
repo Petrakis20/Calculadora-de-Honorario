@@ -95,12 +95,13 @@ conferirAtividadeEconomica();
 conferirBeneficioFiscal();
 conferirLicitacao();
 
-// document.getElementById("captar").addEventListener("click", () => {
-//     var faturamento = document.getElementById("faturamento").value;
-//     console.log(faturamento)
-// })
+document.getElementById("captar").addEventListener("click", () => {
+    var faturamento = document.getElementById("faturamento").value;
+    console.log(faturamento)
+    if(faturamento == 'Domynike'){
+        var domy = document.getElementById("domy")
+        domy.classList.remove("hide")
+    }
+})
 
 console.log(beneficioFiscal + atividadeEconomica + licitacao);
-
-
-
