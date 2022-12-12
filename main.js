@@ -1,4 +1,6 @@
-const atvIndustria = 1818.00;
+const atvIndustriaLPLR = 1818.00;
+
+//Benefícios Fiscais
 const rioLog       = 2424.00;
 const cartilhaModa = 1818.00;
 const compete      = 2424.00;
@@ -8,32 +10,84 @@ const outrosF      = 1818.00;
 const licitacaoS   = 1818.00;
 const industriaPR  = 1818.00;
 
-const f1LPPR  =  1083.33
-const f2LPPR  =  3250.00
-const f3LPPR  =  6500.00
-const f4LPPR  =  10833.33
-const f5LPPR  =  16250.00
-const f6LPPR  =  21666.67
-const f7LPPR  =  27083.33
-const f8LPPR  =  32500.00
-const f9LPPR  =  54166.67
-const f10LPPR =  108333.33
-const f11LPPR =  162500.00
-const f12LPPR =  216666.67
-const f13LPPR =  325000.00
-const f14LPPR =  433333.33
+//Faixas de Faturamento 1 - 14 LP/LR
+const fa1LPLR  =  1083.33;
+const fa2LPLR  =  3250.00;
+const fa3LPLR  =  6500.00;
+const fa4LPLR  =  10833.33;
+const fa5LPLR  =  16250.00;
+const fa6LPLR  =  21666.67;
+const fa7LPLR  =  27083.33;
+const fa8LPLR  =  32500.00;
+const fa9LPLR  =  54166.67;
+const fa10LPLR =  108333.33;
+const fa11LPLR =  162500.00;
+const fa12LPLR =  216666.67;
+const fa13LPLR =  325000.00;
+const fa14LPLR =  433333.33;
+
+//Faixa de Funcionário 1 - 14 LP/LR
+const ff1LPLR = 200;
+const ff2LPLR = 1000;
+const ff3LPLR = 1600;
+const ff4LPLR = 3000;
+const ff5LPLR = 4000;
+const ff6LPLR = 6000;
+const ff7LPLR = 8000;
+const ff8LPLR = 10000;
+const ff9LPLR = 12000;
+const ff10LPLR = 14000;
+const ff11LPLR = 16000;
+const ff12LPLR = 18000;
+const ff13LPLR = 20000;
+const ff14LPLR = 100000;
+
+//Faixa de Notas Fiscais 1 - 14 LP/LR + SIEG
+const fn1LPLR = 200 + 50;
+const fn2LPLR = 250 + 30;
+const fn3LPLR = 300 + 45;
+const fn4LPLR = 350 + 60;
+const fn5LPLR = 400 + 75;
+const fn6LPLR = 500 + 150;
+const fn7LPLR = 750 + 225;
+const fn8LPLR = 1000 + 300;
+const fn9LPLR = 1500 + 450;
+const fn10LPLR = 2000 + 600;
+const fn11LPLR = 2500 + 750;
+const fn12LPLR = 5000 + 1500;
+const fn13LPLR = 10000 + 3000;
+const fn14LPLR = 25000 + 7500;
+
+//Faixa de Docs 1 - 14 LP/LR
+const fd1LPLR = 200;
+const fd2LPLR = 250;
+const fd3LPLR = 300;
+const fd4LPLR = 350;
+const fd5LPLR = 400;
+const fd6LPLR = 500;
+const fd7LPLR = 750;
+const fd8LPLR = 1000;
+const fd9LPLR = 1500;
+const fd10LPLR =2000;
+const fd11LPLR =2500;
+const fd12LPLR = 5000;
+const fd13LPLR = 10000;
+const fd14LPLR = 25000;
 
 
+//-------------------------------- Fim das constantes ------------------------------//
 
 var total = 0;
 
-function calcular(regimeTributario, beneficioFiscal, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos) {
+regimeTributario = 2;
+atividadeEconomica = 1;
+beneficioFiscal = 1;
+faixaFaturamentoAnual = 14;
+faixaFuncionarios = 14;
+faixaNotas = 14;
+faixaDocumentos = 14;
 
-
-    regimeTributario = 1;
-    atividadeEconomica = 1;
-    beneficioFiscal = 2;
-    faixaFaturamentoAnual = 2;
+function calcular(regimeTributario, atividadeEconomica, beneficioFiscal, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos) {
 
     if(regimeTributario != 3) {
         switch (atividadeEconomica) {
@@ -86,56 +140,211 @@ function calcular(regimeTributario, beneficioFiscal, faixaFaturamentoAnual, faix
 
         switch (faixaFaturamentoAnual) {
             case 1:
-                total += f1LPPR
+                total += fa1LPLR
                 break;
             case 2:
-                total += f2LPPR
+                total += fa2LPLR
                 break;
             case 3:
-                total += f3LPPR
+                total += fa3LPLR
                 break;
             case 4:
-                total += f4LPPR
+                total += fa4LPLR
                 break;
             case 5:
-                total += f5LPPR
+                total += fa5LPLR
                 break;
             case 6:
-                total += f6LPPR
+                total += fa6LPLR
                 break;
             case 7:
-                total += f7LPPR
+                total += fa7LPLR
                 break;
             case 8:
-                total += f8LPPR
+                total += fa8LPLR
                 break;
             case 9:
-                total += f9LPPR
+                total += fa9LPLR
                 break;
             case 10:
-                total += f10LPPR
+                total += fa10LPLR
                 break;
             case 11:
-                total += f11LPPR
+                total += fa11LPLR
                 break;
             case 12:
-                total += f12LPPR
+                total += fa12LPLR
                 break;
             case 13:
-                total += f13LPPR
+                total += fa13LPLR
                 break;
             case 14:
-                total += f14LPPR
+                total += fa14LPLR
                 break;
         }
        
+        switch (faixaFuncionarios) {
+            case 1:
+                total += ff1LPLR
+                break;
+            case 2:
+                total += ff2LPLR
+                break;
+            case 3:
+                total += ff3LPLR
+                break;
+            case 4:
+                total += ff4LPLR
+                break;
+            case 5:
+                total += ff5LPLR
+                break;
+            case 6:
+                total += ff6LPLR
+                break;
+            case 7:
+                total += ff7LPLR
+                break;
+            case 8:
+                total += ff8LPLR
+                break;
+            case 9:
+                total += ff9LPLR
+                break;
+            case 10:
+                total += ff10LPLR
+                break;
+            case 11:
+                total += ff11LPLR
+                break;
+            case 12:
+                total += ff12LPLR
+                break;
+            case 13:
+                total += ff13LPLR
+                break;
+            case 14:
+                total += ff14LPLR
+                break;
+        }
+        
+        switch (faixaNotas) {
+            case 1:
+                total += fn1LPLR
+                break;
+            case 2:
+                total += fn2LPLR
+                break;
+            case 3:
+                total += fn3LPLR
+                break;
+            case 4:
+                total += fn4LPLR
+                break;
+            case 5:
+                total += fn5LPLR
+                break;
+            case 6:
+                total += fn6LPLR
+                break;
+            case 7:
+                total += fn7LPLR
+                break;
+            case 8:
+                total += fn8LPLR
+                break;
+            case 9:
+                total += fn9LPLR
+                break;
+            case 10:
+                total += fn10LPLR
+                break;
+            case 11:
+                total += fn11LPLR
+                break;
+            case 12:
+                total += fn12LPLR
+                break;
+            case 13:
+                total += fn13LPLR
+                break;
+            case 14:
+                total += fn14LPLR
+                break;
+        }
+
+        switch (faixaDocumentos) {
+            case 1:
+                total += fd1LPLR
+                break;
+            case 2:
+                total += fd2LPLR
+                break;
+            case 3:
+                total += fd3LPLR
+                break;
+            case 4:
+                total += fd4LPLR
+                break;
+            case 5:
+                total += fd5LPLR
+                break;
+            case 6:
+                total += fd6LPLR
+                break;
+            case 7:
+                total += fd7LPLR
+                break;
+            case 8:
+                total += fd8LPLR
+                break;
+            case 9:
+                total += fd9LPLR
+                break;
+            case 10:
+                total += fd10LPLR
+                break;
+            case 11:
+                total += fd11LPLR
+                break;
+            case 12:
+                total += fd12LPLR
+                break;
+            case 13:
+                total += fd13LPLR
+                break;
+            case 14:
+                total += fd14LPLR
+                break;
+        }
+
     }
+    else if(regimeTributario == 3) {
+        if (atividadeEconomica == 2 || atividadeEconomica == 3) {
+            swit
+        }
+    }
+       
     
-    // total = atividadeEconomica + beneficioFiscal + "licitacao" + faturamentoAnual + notasFiscais + docs
+
     return total
 }
 
-console.log(calcular())
+console.log(Math.round(calcular(regimeTributario, atividadeEconomica, beneficioFiscal, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*//Identificando o Regime Tributário
