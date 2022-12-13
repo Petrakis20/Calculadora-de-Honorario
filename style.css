@@ -6,3 +6,8 @@ body {
 .hide {
     display: none;
 }
+
+.verde {
+    color: green;
+    font-size: 30px;
+}
