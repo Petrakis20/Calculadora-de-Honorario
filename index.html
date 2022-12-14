@@ -14,12 +14,13 @@
 </head>
 <body>
 
-    <header class=" header d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom bg-primary">
-        <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-          <span class="fs-4">JCA</span>
-        </a>
-      </header>
+    <header class="header d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom bg-primary">
+        <span class="fs-4" class=""><img class="logo" src="logo-jca.png" alt="Logo JCA Contadores" srcset=""></span>
+    </header>
+
+    <div class="d-flex justify-content-center mb-4 py-3">
+        <h5>Calculadora de Honorário</h5>
+    </div>
 
     <div class="container">
         <p>
@@ -77,10 +78,10 @@
             <label for="faixaNotas">Faixa da Média de Notas Ficais Mensais:&nbsp;</label>
             <input type="text" id="faixaNotas">
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaNotasPR">
-                Volumetria de Doc Fiscais LP/LR
+                Volumetria de Notas Fiscais LP/LR
             </button>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaNotasSN">
-                Volumetria de Doc Fiscais SN
+                Volumetria de Notas Fiscais SN
             </button>
         </p>
         <p>
@@ -94,13 +95,40 @@
             </button>
         </p>
 
-        
         <div class="d-flex justify-content-center">
-            <button class="btn btn-success" id="validar">Calcular</button>
-            <p id="calculado" class="hide">CALCULADO COM SUCESSO</p>
+            <button class="btn btn-success mx-2" id="validar">Calcular</button>
+            <button class="btn btn-dark mx-2" id="limpar">Limpar</button>
+            <button class="btn btn-danger mx-2 hide" id="relatorio"><a href="resultado.html" class="text-decoration-none text-light">Relatório</a></button>
         </div>
     </div>
 
+    <!-- <div class="container listaSemEstilo">
+        <ul class="d-flex" id="rtLista">
+            <li>Regime Tributario: </li>
+        </ul>
+        <ul class="d-flex" id="rtLista">
+            <li>Atividade Econômica: </li>
+        </ul>
+        <ul class="d-flex" id="rtLista">
+            <li>Licitação ? </li>
+        </ul>
+        <ul class="d-flex" id="rtLista">
+            <li>Faturamento Anual: </li>
+        </ul>
+        <ul class="d-flex" id="rtLista">
+            <li>Regime Tributario: </li>
+        </ul>
+        <ul class="d-flex" id="rtLista">
+            <li>Regime Tributario: </li>
+        </ul>
+        <ul class="d-flex" id="rtLista">
+            <li>Regime Tributario: </li>
+        </ul>
+        <ul class="d-flex" id="rtLista">
+            <li>Regime Tributario: </li>
+        </ul>
+    </div> -->
+    
 
     <!-- Modal Regime Tributário -->
     <div class="modal" id="tabelaRegimeTributario">
@@ -147,8 +175,6 @@
         </div>
         </div>
     </div>
-
-
 
     <!-- Modal Atividade Econômica -->
     <div class="modal" id="tabelaAtividadeEconomica">
@@ -448,6 +474,631 @@
         </div>
       </div>
     </div>
+
+    <!-- Modal Faturamento Coméricio Simples Nacional -->
+    <div class="modal" id="tabelaFaturamentoComercioSN">
+        <div class="modal-dialog">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Faixas de Faturamento De Comércio Simples Nacional</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Faixa</th>
+                        <th scope="col">Média Maxima</th>
+                        <th scope="col">De</th>
+                        <th scope="col">Até</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>15.000,00</td>
+                        <td>-</td>
+                        <td>180.000,00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>30.000,00</td>
+                        <td>180.000,01</td>
+                        <td>360.000,00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>41.666,67</td>
+                        <td>360.000,01</td>
+                        <td>500.000,00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>58.333,33</td>
+                        <td>500.000,01</td>
+                        <td>700.000,00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>83.333,33</td>
+                        <td>700.000,01</td>
+                        <td>1.000.000,00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>108.333,33</td>
+                        <td>1.000.000,01</td>
+                        <td>1.300.000,00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>200.000,00</td>
+                        <td>1.300.000,01</td>
+                        <td>2.400.000,00</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>300.000,00</td>
+                        <td>2.400.000,01</td>
+                        <td>3.600.000,00</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Funcionarios LP/LR -->
+    <div class="modal" id="tabelaNumFuncPR">
+        <div class="modal-dialog">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Faixas de Funcionário Lucro Real / Lucro Presumido</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Faixa</th>
+                        <th scope="col">De</th>
+                        <th scope="col">Até</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>1</td>
+                        <td>29</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>30</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>51</td>
+                        <td>80</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>81</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>151</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>201</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>301</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>401</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>501</td>
+                        <td>600</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>601</td>
+                        <td>700</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11</th>
+                        <td>701</td>
+                        <td>800</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12</th>
+                        <td>801</td>
+                        <td>900</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">13</th>
+                        <td>901</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">14</th>
+                        <td>1001</td>
+                        <td>5000</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Funcionarios SN -->
+    <div class="modal" id="tabelaNumFuncSN">
+        <div class="modal-dialog">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Faixas de Funcionário Simples Nacional</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Faixa</th>
+                        <th scope="col">De</th>
+                        <th scope="col">Até</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>1</td>
+                        <td>5</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>6</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>11</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>21</td>
+                        <td>40</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>41</td>
+                        <td>70</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>71</td>
+                        <td>100</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>101</td>
+                        <td>150</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>151</td>
+                        <td>200</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Notas Fiscais LP/LR -->
+    <div class="modal" id="tabelaNotasPR">
+        <div class="modal-dialog">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Faixas de Notas Fiscais Lucro Real / Lucro Presumido</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Faixa</th>
+                        <th scope="col">De</th>
+                        <th scope="col">Até</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>1</td>
+                        <td>99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>100</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>201</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>301</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>401</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>501</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>1001</td>
+                        <td>1500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>1501</td>
+                        <td>2000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>2001</td>
+                        <td>3000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>3001</td>
+                        <td>4000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11</th>
+                        <td>4001</td>
+                        <td>5000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12</th>
+                        <td>5001</td>
+                        <td>10000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">13</th>
+                        <td>10001</td>
+                        <td>20000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">14</th>
+                        <td>20001</td>
+                        <td>50000</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Volumetria de Notas Fiscais SN -->
+    <div class="modal" id="tabelaNotasSN">
+        <div class="modal-dialog">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Faixas de Notas Fiscais Simples Nacional</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Faixa</th>
+                        <th scope="col">De</th>
+                        <th scope="col">Até</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>1</td>
+                        <td>99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>100</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>201</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>301</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>401</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>501</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>1001</td>
+                        <td>1500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>1501</td>
+                        <td>2000</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <div class="modal" id="tabelaDocPR">
+        <div class="modal-dialog">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Faixas de Documentos Lucro Real / Lucro Presumido</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Faixa</th>
+                        <th scope="col">De</th>
+                        <th scope="col">Até</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>1</td>
+                        <td>99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>100</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>201</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>301</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>401</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>501</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>1001</td>
+                        <td>1500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>1501</td>
+                        <td>2000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">9</th>
+                        <td>2001</td>
+                        <td>3000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">10</th>
+                        <td>3001</td>
+                        <td>4000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">11</th>
+                        <td>4001</td>
+                        <td>5000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">12</th>
+                        <td>5001</td>
+                        <td>10000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">13</th>
+                        <td>10001</td>
+                        <td>20000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">14</th>
+                        <td>20001</td>
+                        <td>50000</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
+    <!-- Modal Volumetria de Despesas SN -->
+    <div class="modal" id="tabelaDocSN">
+        <div class="modal-dialog">
+        <div class="modal-content">
+    
+            <!-- Modal Header -->
+            <div class="modal-header">
+            <h4 class="modal-title">Faixas de Documentos Simples Nacional</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+    
+            <!-- Modal body -->
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Faixa</th>
+                        <th scope="col">De</th>
+                        <th scope="col">Até</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>1</td>
+                        <td>99</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>100</td>
+                        <td>200</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>201</td>
+                        <td>300</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">4</th>
+                        <td>301</td>
+                        <td>400</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">5</th>
+                        <td>401</td>
+                        <td>500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">6</th>
+                        <td>501</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">7</th>
+                        <td>1001</td>
+                        <td>1500</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">8</th>
+                        <td>1501</td>
+                        <td>2000</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    
+            <!-- Modal footer -->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
+            </div>
+    
+        </div>
+        </div>
+    </div>
+
     
     <script src="./JS/main.js" type="module"></script>
 
