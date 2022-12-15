@@ -58,9 +58,121 @@ import { fds1SN, fds2SN, fds3SN, fds4SN, fds5SN, fds6SN, fds7SN, fds8SN } from "
 
 
 
-//regimeTributario, atividadeEconomica, beneficioFiscal, licitacao, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos
 
 //Validação do form
+
+function escreverRegimeTributario(regimeTributario) {
+    switch (regimeTributario) {
+        case 1:
+            regimeTributario = "Lucro Presumido"
+            break;
+        case 2:
+            regimeTributario = "Lucro Real"     
+            break;
+        case 3:
+            regimeTributario = "Simples Nacional"
+            break;
+    }
+    let resultadoRegime = document.getElementById("resultadoRegime")
+    resultadoRegime.innerHTML = regimeTributario;
+}
+function escreverAtividadeEconomica(atividadeEconomica, regimeTributario) {
+    if(regimeTributario != 3) {
+        switch (atividadeEconomica) {
+            case 1:
+                atividadeEconomica = "Indústria" + "  -   " + atvIndustriaLPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                break;
+            case 2:
+                atividadeEconomica = "Comércio Varejista";
+                break;
+            case 3:
+                atividadeEconomica = "Comércio Atacadista";
+                break;
+            case 4:
+                atividadeEconomica = "Prestação de Serviços";
+                break;
+        }
+    }else if (regimeTributario == 3) {
+        switch (atividadeEconomica) {
+            case 1:
+                atividadeEconomica = "Indústria" + "  -   " + "R$" + atvIndustriaSN + ",00";
+                break;
+            case 2:
+                atividadeEconomica = "Comércio Varejista";
+                break;
+            case 3:
+                atividadeEconomica = "Comércio Atacadista";
+                break;
+            case 4:
+                atividadeEconomica = "Prestação de Serviços";
+                break;
+        }
+    }
+
+    let resultadoAtv = document.getElementById("resultadoAtv")
+    resultadoAtv.innerHTML = atividadeEconomica;
+}
+
+function escreverBeneficioFiscal(regimeTributario, beneficioFiscal) {
+    if (regimeTributario != 3) {
+        switch (beneficioFiscal) {
+            case 1:
+                beneficioFiscal = "RioLog" + "  -  " + rioLog.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                break;
+            case 2:
+                beneficioFiscal = "Cartilha da Moda" + "  -  " + cartilhaModa.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                break;
+            case 3:
+                beneficioFiscal = "Compete" + "  -  " + compete.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                break;
+            case 4:
+                beneficioFiscal = "Lei 6979(Indústria)" + "  -  " + leiInd.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                break;
+            case 5:
+                beneficioFiscal = "Fármacos" + "  -  " + farmacos.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                break;
+            case 6:
+                beneficioFiscal = "Outros" + "  -  " + outrosF.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                break;
+            case 7:
+                beneficioFiscal = "Não Possui" 
+                break;
+        }
+    }else {
+        beneficioFiscal = "Não possui"
+    }
+
+    let resultadoBeneficio = document.getElementById("resultadoBeneficio")
+    resultadoBeneficio.innerHTML = beneficioFiscal;
+}
+
+function escreverLicitacao(licitacao, regimeTributario) {
+    if(regimeTributario != 3){
+        switch (licitacao) {
+            case 1:
+                licitacao = "Sim" + "  -  " + "R$" + licitacaoL + ",00"
+                break;
+            case 2:
+                licitacao = "Não"
+                break;
+        }
+    }
+    else if(regimeTributario == 3) {
+        switch (licitacao) {
+            case 1:
+                licitacao = "Sim" + "  -  " + "R$" + licitacaoSimples + ",00"
+                break;
+            case 2:
+                licitacao = "Não"
+                break;
+        }
+    }
+    let resultadoLicitacao = document.getElementById("resultadoLicitacao")
+    resultadoLicitacao.innerHTML = licitacao;
+}
+
+
+
 
 let total = 0;
 function calcularLPLR(atividadeEconomica, beneficioFiscal, licitacao, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos) {    
@@ -296,6 +408,7 @@ function calcularLPLR(atividadeEconomica, beneficioFiscal, licitacao, faixaFatur
 
 function calcularSimplesIndustria(licitacao, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos) {
     total += atvIndustriaSN
+    console.log(licitacao)
     switch (licitacao) {
         case 1:
             total += licitacaoSimples
@@ -408,6 +521,7 @@ function calcularSimplesIndustria(licitacao, faixaFaturamentoAnual, faixaFuncion
             total += fdc8SN
             break;
     }
+    console.log(total)
     return total;
 
 }    
@@ -644,117 +758,296 @@ function calcularSimplesServico(licitacao, faixaFaturamentoAnual, faixaFuncionar
     return total;
 }
 
-// function zerar(regimeTributario, atividadeEconomica, beneficioFiscal, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos) {
-//     regimeTributario.value = "";
-//     atividadeEconomica.value = "";
-//     beneficioFiscal.value = "";
-//     faixaFaturamentoAnual.value = "";
-//     faixaFuncionarios.value = "";
-//     faixaNotas.value = "";
-//     faixaDocumentos.value = "";
+document.getElementById("limpar").addEventListener("click", zerar)
+function zerar() {  
+    console.log("oi")
+    regimeTributario.value = "" 
+    atividadeEconomica.value = "" 
+    beneficioFiscal.value = ""
+    licitacaoS.checked = false
+    licitacaoN.checked = false
+    document.getElementById("faturamentoAnual").value = ""
+    document.getElementById("faixaFuncionarios").value = ""
+    document.getElementById("faixaNotas").value = ""
+    document.getElementById("faixaDocumentos").value = ""
+    document.getElementById("resultado").innerHTML = ""
+}
+
+// function escreverRegimeTributario(regimeTributario) {
+//     switch (regimeTributario) {
+//         case 1:
+//             regimeTributario = "Lucro Presumido"
+//             break;
+//         case 2:
+//             regimeTributario = "Lucro Real"     
+//             break;
+//         case 3:
+//             regimeTributario = "Simples Nacional"
+//             break;
+//     }
+
+//     let resultadoRegime = $("#resultadoRegime")
+//     resultadoRegime.text(regimeTributario)
 // }
-document.getElementById("validar").addEventListener("click", () => {
 
-    var licitacao
-    let regimeTributario        = document.getElementById("regimeTributario").value;
-    let atividadeEconomica      = document.getElementById("atividadeEconomica").value;
-    let beneficioFiscal         = document.getElementById("beneficioFiscal").value;
-    let licitacaoS              = document.getElementById("licitacaoS");
-    let licitacaoN              = document.getElementById("licitacaoN");
-    let faixaFaturamentoAnual   = document.getElementById("faturamentoAnual").value;
-    let faixaFuncionarios       = document.getElementById("faixaFuncionarios").value;
-    let faixaNotas              = document.getElementById("faixaNotas").value;
-    let faixaDocumentos         = document.getElementById("faixaDocumentos").value;
+// function conferirAtividadeEconomica(atividadeEconomica, regimeTributario) {
+//     if(regimeTributario != 3) {
+//         switch (atividadeEconomica) {
+//             case 1:
+//                 atividadeEconomica = "Indústria" + "  -   " + "R$" + atvIndustriaLPLR + ",00";
+//                 break;
+//             case 2:
+//                 atividadeEconomica = "Comércio Varejista";
+//                 break;
+//             case 3:
+//                 atividadeEconomica = "Comércio Atacadista";
+//                 break;
+//             case 4:
+//                 atividadeEconomica = "Prestação de Serviços";
+//                 break;
+//         }
+//     }else if (regimeTributario == 3) {
+//         switch (atividadeEconomica) {
+//             case 1:
+//                 atividadeEconomica = "Indústria" + "  -   " + "R$" + atvIndustriaSN + ",00";
+//                 break;
+//             case 2:
+//                 atividadeEconomica = "Comércio Varejista";
+//                 break;
+//             case 3:
+//                 atividadeEconomica = "Comércio Atacadista";
+//                 break;
+//             case 4:
+//                 atividadeEconomica = "Prestação de Serviços";
+//                 break;
+//         }
+//     }
 
-   
+//     let resultadoAtv = document.getElementById("resultadoAtv")
+//     resultadoAtv.innerHTML = atividadeEconomica;
+// }
+
+// // function escreverBeneficioFiscal() {
+// //     if
+// // }
+
+// function escreverLicitacao(licitacao, regimeTributario) {
+//     if(regimeTributario != 3){
+//         switch (licitacao) {
+//             case 1:
+//                 licitacao = "Sim" + "  -  " + "R$" + licitacaoL + ",00"
+//                 break;
+//             case 2:
+//                 licitacao = "Não"
+//                 break;
+//         }
+//     }
+//     else if(regimeTributario == 3) {
+//         switch (licitacao) {
+//             case 1:
+//                 licitacao = "Sim" + "  -  " + "R$" + licitacaoSimples + ",00"
+//                 break;
+//             case 2:
+//                 licitacao = "Não"
+//                 break;
+//         }
+//     }
+//     let resultadoLicitacao = document.getElementById("resultadoLicitacao")
+//     resultadoLicitacao.innerHTML = licitacao;
+// }
+
+// function escreverFaturamentoAnual(faixaFaturamentoAnual, regimeTributario) {
+//     if(regimeTributario != 3){
+//         switch (faixaFaturamentoAnual) {
+//             case 1:
+//                 faixaFaturamentoAnual = "R$" + fa1LPLR
+//                 break;
+//             case 2:
+//                 faixaFaturamentoAnual = "R$" + fa2LPLR
+//                 break;
+//             case 3:
+//                 faixaFaturamentoAnual = "R$" + fa3LPLR
+//                 break;
+//             case 4:
+//                 faixaFaturamentoAnual = "R$" + fa4LPLR
+//                 break;
+//             case 5:
+//                 faixaFaturamentoAnual = "R$" + fa5LPLR
+//                 break;
+//             case 6:
+//                 faixaFaturamentoAnual = "R$" + fa6LPLR
+//                 break;
+//             case 7:
+//                 faixaFaturamentoAnual = "R$" + fa7LPLR
+//                 break;
+//             case 8:
+//                 faixaFaturamentoAnual = "R$" + fa8LPLR
+//                 break;
+//             case 9:
+//                 faixaFaturamentoAnual = "R$" + fa9LPLR
+//                 break;
+//             case 10:
+//                 faixaFaturamentoAnual = "R$" + fa10LPLR
+//                 break;
+//             case 11:
+//                 faixaFaturamentoAnual = "R$" + fa11LPLR
+//                 break;
+//             case 12:
+//                 faixaFaturamentoAnual = "R$" + fa12LPLR
+//                 break;
+//             case 13:
+//                 faixaFaturamentoAnual = "R$" + fa13LPLR
+//                 break;
+//             case 14:
+//                 faixaFaturamentoAnual = "R$" + fa14LPLR
+//                 break;
+//         }
+//     }
+//     else if(regimeTributario == 3) {
+
+//     }
+//     let resultadoFA = document.getElementById("resultadoFA")
+//     resultadoFA.innerHTML = faixaFaturamentoAnual;
+// }
+
+// function escreverFuncionarios(faixaFuncionarios ,regimeTributario) {
+
 
     
-    if(regimeTributario < 1 || regimeTributario > 3 || regimeTributario == ""){
-        alert("Regime Tributário Inválido");
+//     let resultadoFF = document.getElementById("resultadoFF")
+//     resultadoFF.innerHTML = faixaFuncionarios;
+// }
+
+
+document.getElementById("validar").addEventListener("click", () => {
+    let licitacao
+    let regimeTributario        = document.getElementById("regimeTributario");
+    let atividadeEconomica      = document.getElementById("atividadeEconomica");
+    let beneficioFiscal         = document.getElementById("beneficioFiscal");
+    let licitacaoS              = document.getElementById("licitacaoS")
+    let licitacaoN              = document.getElementById("licitacaoN")
+    let faixaFaturamentoAnual   = document.getElementById("faturamentoAnual");
+    let faixaFuncionarios       = document.getElementById("faixaFuncionarios");
+    let faixaNotas              = document.getElementById("faixaNotas");
+    let faixaDocumentos         = document.getElementById("faixaDocumentos");
+    
+    if(parseInt(regimeTributario.value) < 1 || parseInt(regimeTributario.value) > 3 || regimeTributario.value == ""){
+        alert("Regime Tributário Inválido")
+        regimeTributario.value = ""
     }
-    else if(atividadeEconomica < 1 || atividadeEconomica > 4  ) {
-        alert("Atividade Econômica Inválida");
+    else if(parseInt(atividadeEconomica.value) < 1 || parseInt(atividadeEconomica.value) > 4 || atividadeEconomica.value == "") {
+        alert("Atividade Econômica Inválida")
+        atividadeEconomica.value = ""
+        return false
     }
-    else if(beneficioFiscal < 1 || beneficioFiscal > 7){
+    else if(parseInt(beneficioFiscal.value) < 1 || parseInt(beneficioFiscal.value) > 7){
         alert("Benefício Fiscal Inválido")
+        beneficioFiscal.value = ""
+        return false
     }
     else if(licitacaoS.checked == false && licitacaoN.checked == false){
-        alert("Verificar se Possui Licitação");
+        alert("Verificar se Possui Licitação")
+        return false
     }
-    else if(regimeTributario == 3){
-        if(beneficioFiscal >= 1 && beneficioFiscal <= 7) {
-            alert("Não é possível usar Benefício fiscal");
+
+    if(parseInt(regimeTributario.value) == 3){
+        if(parseInt(beneficioFiscal.value) >= 1 && parseInt(beneficioFiscal.value) <= 7) {
+            alert("Não é possível usar Benefício fiscal")
+            beneficioFiscal.value = ""
+            return false
         }
-       if(faixaFaturamentoAnual < 1 || faixaFaturamentoAnual > 8){
-            alert("Faixa de Faturamento Inválida para Simples Nacional");
+       else if(parseInt(faixaFaturamentoAnual.value) < 1 || parseInt(faixaFaturamentoAnual.value) > 8){
+            alert("Faixa de Faturamento Inválida para Simples Nacional")
+            faixaFaturamentoAnual.value = ""
+            return false
         }
-       if(faixaFuncionarios < 1 || faixaFuncionarios > 8){
+       else if(parseInt(faixaFuncionarios.value) < 1 || parseInt(faixaFuncionarios.value) > 8){
             alert("Faixa de Funcionários Inválida para Simples Nacional")
+            faixaFuncionarios.value = ""
+            return false
         }
-       if(faixaNotas < 1 || faixaNotas > 8){
+        else if(parseInt(faixaNotas.value) < 1 || parseInt(faixaNotas.value) > 8){
             alert("Faixa de Notas Inválida para Simples Nacional")
+            faixaNotas.value = ""
+            return false
         }
-       if(faixaDocumentos < 1 || faixaDocumentos > 8) {
+        else if(parseInt(faixaDocumentos.value) < 1 || parseInt(faixaDocumentos.value) > 8) {
             alert("Faixa de Documentos Inválida para Simples Nacional")
+            faixaDocumentos.value = ""
+            return false
         }
     }
-    else if(regimeTributario == 1 || regimeTributario == 2){
-        if(faixaFaturamentoAnual < 1 || faixaFaturamentoAnual > 14) {
-            alert("Faixa de Faturamento Inválida para Lucro Real / Lucro Presumido");
+    else if(parseInt(regimeTributario.value) == 1 || parseInt(regimeTributario.value) == 2){
+        if(parseInt(faixaFaturamentoAnual.value) < 1 || parseInt(faixaFaturamentoAnual.value) > 14) {
+            alert("Faixa de Faturamento Inválida para Lucro Real / Lucro Presumido")
+            faixaFaturamentoAnual.value = ""
+            return false
         }
-        else if(faixaFuncionarios < 1 || faixaFuncionarios > 14){
+        else if(parseInt(faixaFuncionarios.value) < 1 || parseInt(faixaFuncionarios.value) > 14){
             alert("Faixa de Funcionários Inválida para Lucro Real / Lucro Presumido")
+            faixaFuncionarios.value = ""
+            return false
         }
-        else if(faixaNotas < 1 || faixaNotas > 14){
+        else if(parseInt(faixaNotas.value) < 1 || parseInt(faixaNotas.value) > 14){
             alert("Faixa de Notas Inválida para Lucro Real / Lucro Presumido")
+            faixaNotas.value = ""
+            return false
         }
-        else if(faixaDocumentos < 1 || faixaDocumentos > 14) {
+        else if(parseInt(faixaDocumentos.value) < 1 || parseInt(faixaDocumentos.value) > 14) {
             alert("Faixa de Documentos Inválida para Lucro Real / Lucro Presumido")
+            faixaDocumentos.value = ""
+            return false
         }
     }
 
-   if(regimeTributario != 3) {
-        if(licitacaoS.checked == true) {
-            licitacao = 1
-        }else {
-            licitacao = 2
-        }
-    }else if(regimeTributario == 3) {
-        if(licitacaoS.checked == true) {
-            licitacao = 1
-        }else {
-            licitacao = 2
-        }
-    } 
-
-    regimeTributario      = parseInt(regimeTributario)
-    atividadeEconomica    = parseInt(atividadeEconomica)
-    beneficioFiscal       = parseInt(beneficioFiscal)
-    faixaFaturamentoAnual = parseInt(faixaFaturamentoAnual)
-    faixaFuncionarios     = parseInt(faixaFuncionarios)
-    faixaNotas            = parseInt(faixaNotas)
-    faixaDocumentos       = parseInt(faixaDocumentos)
-
-    var relatorio = document.getElementById("relatorio")
-
-   if(atividadeEconomica != 3) {
-        console.log(calcularLPLR(atividadeEconomica, beneficioFiscal, licitacao, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos));
-    }else if(atividadeEconomica == 3){
-        if(atividadeEconomica == 1){
-            console.log(calcularSimplesIndustria(licitacao, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos))
-        }else if (atividadeEconomica == 2 || atividadeEconomica == 3) {
-            console.log(calcularSimplesComercio(licitacao, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos))
-        }else if(atividadeEconomica == 4) {
-            console.log(calcularSimplesServico(licitacao, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos))
+    if(licitacaoS.checked == true) {
+        licitacao = 1
+    }else if(licitacaoN.checked == true) {
+        licitacao = 2
+    }
+        
+    if(parseInt(regimeTributario.value) != 3) {
+        console.log(calcularLPLR(parseInt(atividadeEconomica.value), parseInt(beneficioFiscal.value), licitacao, parseInt(faixaFaturamentoAnual.value), parseInt(faixaFuncionarios.value), parseInt(faixaNotas.value), parseInt(faixaDocumentos.value)))
+    }
+    else{
+        if(parseInt(atividadeEconomica.value) == 1){
+            console.log(calcularSimplesIndustria(licitacao, parseInt(faixaFaturamentoAnual.value), parseInt(faixaFuncionarios.value), parseInt(faixaNotas.value), parseInt(faixaDocumentos.value)))
+        }else if (parseInt(atividadeEconomica.value) == 2 || parseInt(atividadeEconomica.value) == 3) {
+            console.log(calcularSimplesComercio(licitacao, parseInt(faixaFaturamentoAnual.value), parseInt(faixaFuncionarios.value), parseInt(faixaNotas.value), parseInt(faixaDocumentos.value)))
+        }else if(parseInt(atividadeEconomica.value) == 4) {
+            console.log(calcularSimplesServico(licitacao, parseInt(faixaFaturamentoAnual.value), parseInt(faixaFuncionarios.value), parseInt(faixaNotas.value), parseInt(faixaDocumentos.value)))
         }
     }
+
     
 
-    // zerar(regimeTributario, atividadeEconomica, beneficioFiscal, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos)
-    total = 0
+    let totalFinal = document.getElementById("resultado")
 
+    totalFinal.innerHTML = total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+    
+    escreverRegimeTributario(parseInt(regimeTributario.value))
+    escreverAtividadeEconomica(parseInt(atividadeEconomica.value), parseInt(regimeTributario.value))
+    escreverLicitacao(licitacao, parseInt(regimeTributario.value))
+    escreverBeneficioFiscal(parseInt(regimeTributario.value), parseInt(beneficioFiscal.value))
+    // escreverFaturamentoAnual(parseInt(faixaFaturamentoAnual.value), parseInt(regimeTributario.value), parseInt(atividadeEconomica.value))
+    // escreverFuncionarios(parseInt(faixaFuncionarios.value), parseInt(regimeTributario.value), parseInt(atividadeEconomica.value))
+    // // escreverNotas(faixaNotas, parseInt(regimeTributario.value))
+    // // escreverDoc(faixaDocumentos, parseInt(regimeTributario.value))
+
+
+    // let tudo = document.querySelector("#tudo")
+    // tudo.classList.remove("hide")
+    console.log(total)
+   
+    total = 0
 })
 
+
+
+
+
+
+// zerar(regimeTributario, atividadeEconomica, beneficioFiscal, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos)
 
 
 
@@ -764,74 +1057,61 @@ document.getElementById("validar").addEventListener("click", () => {
     // escreverBeneficioFiscal();
     // escreverLicitacao();
 
+//Identificando o Regime Tributário
 
-    /*//Identificando o Regime Tributário
-function escreverRegimeTributario(regimeTributario) {
-    switch (regimeTributario) {
-        case 1:
-            regimeTributario = "Lucro Presumido"
-            return regimeTributario
-        case 2:
-            regimeTributario = "Lucro Real"     
-            return regimeTributario;
-        case 3:
-            regimeTributario = "Simples Nacional"
-            return regimeTributario;
-    }
-}
 
 //Identificando o Atividade Econômica
-function escreverAtividadeEconomica(atividadeEconomica, regimeTributario) {
-    switch (atividadeEconomica) {
-        case 1:
-            atividadeEconomica = "Indústria";
-            return atividadeEconomica;
-        case 2:
-            atividadeEconomica = "Comércio Varejista";
-            return atividadeEconomica;
-        case 3:
-            atividadeEconomica = "Comércio Atacadista";
-            return atividadeEconomica;
-        case 4:
-            atividadeEconomica = "Prestação de Serviços";
-            return atividadeEconomica;
-    }
-}
+// function escreverAtividadeEconomica(atividadeEconomica, regimeTributario) {
+//     switch (atividadeEconomica) {
+//         case 1:
+//             atividadeEconomica = "Indústria";
+//             return atividadeEconomica;
+//         case 2:
+//             atividadeEconomica = "Comércio Varejista";
+//             return atividadeEconomica;
+//         case 3:
+//             atividadeEconomica = "Comércio Atacadista";
+//             return atividadeEconomica;
+//         case 4:
+//             atividadeEconomica = "Prestação de Serviços";
+//             return atividadeEconomica;
+//     }
+// }
 
-//Identificando o Benefício Fiscal
-function escreverBeneficioFiscal() {
-    switch (beneficioFiscal) {
-        case 1:
-            beneficioFiscal = "Rio Log";
-            return beneficioFiscal;
-        case 2:
-            beneficioFiscal = "Cartilha da Moda";
-            return beneficioFiscal;
-        case 3:
-            beneficioFiscal = "Compete";
-            return beneficioFiscal;
-        case 4:
-            beneficioFiscal = "Lei 6979(Indústria)";
-            return beneficioFiscal;
-    }
-}
+// //Identificando o Benefício Fiscal
+// function escreverBeneficioFiscal() {
+//     switch (beneficioFiscal) {
+//         case 1:
+//             beneficioFiscal = "Rio Log";
+//             return beneficioFiscal;
+//         case 2:
+//             beneficioFiscal = "Cartilha da Moda";
+//             return beneficioFiscal;
+//         case 3:
+//             beneficioFiscal = "Compete";
+//             return beneficioFiscal;
+//         case 4:
+//             beneficioFiscal = "Lei 6979(Indústria)";
+//             return beneficioFiscal;
+//     }
+// }
 
 //Identificando o Regime Tributário
-function escreverLicitacao() {
-    // if(licitacao == 'Sim' || licitacao == 'sim'){
-    //     licitacao = 1;
-    // }
-    //if(licitacao == 'Não' || licitacao == 'não' || licitacao == 'nao' || licitacao == 'Nao'){
-    //     licitacao = 0;
-    // }   
-}
+// function escreverLicitacao() {
+//     // if(licitacao == 'Sim' || licitacao == 'sim'){
+//     //     licitacao = 1;
+//     // }
+//     //if(licitacao == 'Não' || licitacao == 'não' || licitacao == 'nao' || licitacao == 'Nao'){
+//     //     licitacao = 0;
+//     // }   
+// }
 
 //Chamando as funções
 // conferirRegimeTributario(regimeTributario);
 // console.log(conferirAtividadeEconomica(atividadeEconomica, regimeTributario));
 // conferirBeneficioFiscal();
 // conferirLicitacao();
-*/
+
 
 
 
@@ -916,3 +1196,28 @@ conferirBeneficioFiscal();
 conferirLicitacao();*/
 
 
+
+const lua = document.querySelector('#lua')
+const sol = document.querySelector('#sol')
+
+const $html = document.querySelector('html')
+
+function esconderLua(){
+    lua.classList.add('hide')
+}
+
+function esconderSol(){
+    sol.classList.add('hide')
+}
+
+lua.addEventListener('click', function(){
+    $html.classList.toggle('darkmode')
+    sol.classList.remove('hide')
+    esconderLua()
+})
+
+sol.addEventListener('click', function(){
+    $html.classList.toggle('darkmode')
+    lua.classList.remove('hide')
+    esconderSol()
+})

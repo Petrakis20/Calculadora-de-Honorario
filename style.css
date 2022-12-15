@@ -1,10 +1,36 @@
+html {
+    height: 100%;
+    min-height: 100%;
+}
+
+:root {
+    --text-color: #212529;
+    --bg-color: rgb(233, 231, 231);
+}
+
+
+.darkmode:root {
+    --text-color: #ffffff;
+    --bg-color: rgb(12, 37, 77);
+}
+
+
 body {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background-color: var(--bg-color);
 }
 .hide {
     display: none;
+}
+
+.container label, .titulo {
+    color: var(--text-color);
 }
 
 .verde {
@@ -18,4 +44,77 @@ body {
 
 .listaSemEstilo ul{
     list-style: none;
+}
+
+.tudo {
+    background-color: #0D6EFD;
+    padding: 1em;
+    border-radius: 2em 2em 0 0;
+    margin-top: 1em;
+    -webkit-box-shadow: 1px -3px 17px 0px rgba(0,0,0,0.37);
+    -moz-box-shadow: 1px -3px 17px 0px rgba(0,0,0,0.37);
+    box-shadow: 1px -3px 17px 0px rgba(0,0,0,0.37);
+    animation: downtop 1s;
+}
+
+.resultados span {
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+}
+
+footer .logo {
+    animation: JCAlogo 1020ms;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.lua, .sol {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+} 
+
+.lua:hover, .sol:hover {
+    cursor: pointer;
+}
+
+.lua:hover svg path {
+    fill: #054ab1;
+}
+
+.sol:hover svg path {
+    fill: #c6d400;
+}
+
+.calculadora {
+    border: 5px solid white;
+    border-radius: 3em;
+    padding: 2em;
+    position: relative;
+}
+
+@keyframes downtop {
+    0%{
+      opacity: 0;
+      transform: translatey(100px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translatex(0);
+    }
+}
+
+@keyframes JCAlogo {
+    0%{
+        opacity: 0;
+        transform: translatey(550px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
