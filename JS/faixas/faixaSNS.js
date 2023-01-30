@@ -1,12 +1,12 @@
 //Faixa de Faturamento Serviços SN
-const ffs1SN = 700 + 210;
-const ffs2SN = 800 + 240;
-const ffs3SN = 900 + 270;
-const ffs4SN = 1000 + 300;
-const ffs5SN = 1100 + 330;
-const ffs6SN = 1200 + 360;
-const ffs7SN = 1700 + 510;
-const ffs8SN = 3000 + 900;
+const ffs1SN = 500;
+const ffs2SN = 800;
+const ffs3SN = 900;
+const ffs4SN = 1000;
+const ffs5SN = 1100;
+const ffs6SN = 1200;
+const ffs7SN = 1700;
+const ffs8SN = 3000;
 
 export {
     ffs1SN,
@@ -40,15 +40,15 @@ export {
     fcs8SN
 }
 
-//Faixa de Notas Fiscais Serviços SN
-const fns1SN =  75 + 14.85;
-const fns2SN =  150 + 30;
-const fns3SN =  300 + 45 
-const fns4SN =  600 + 60
-const fns5SN =  1050 + 75
-const fns6SN =  1500 + 150
-const fns7SN =  2250 + 225 
-const fns8SN =  3000 + 300
+//Faixa de Notas Fiscais Serviços SN + SIEG
+const fns1SN =  75 + 50;
+const fns2SN =  150 + 70;
+const fns3SN =  300 + 90;
+const fns4SN =  600 + 110;
+const fns5SN =  1050 + 130;
+const fns6SN =  1500 + 150;
+const fns7SN =  2250 + 200;
+const fns8SN =  3000 + 250;
 
 export {
     fns1SN,
@@ -62,14 +62,14 @@ export {
 }
 
 //Faixa de Docs Serviços SN
-const fds1SN = 4.95
-const fds2SN = 10
-const fds3SN = 15
-const fds4SN = 20
-const fds5SN = 25
-const fds6SN = 50
-const fds7SN = 75
-const fds8SN = 100
+const fds1SN = 49.5
+const fds2SN = 100
+const fds3SN = 150
+const fds4SN = 200
+const fds5SN = 250
+const fds6SN = 500
+const fds7SN = 750
+const fds8SN = 1000
 
 export {
     fds1SN, 

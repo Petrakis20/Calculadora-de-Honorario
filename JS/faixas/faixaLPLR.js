@@ -1,18 +1,18 @@
 //Faixas de Faturamento 1 - 14 LP/LR
-const fa1LPLR  =  1083.33;
-const fa2LPLR  =  3250.00;
-const fa3LPLR  =  6500.00;
-const fa4LPLR  =  10833.33;
-const fa5LPLR  =  16250.00;
-const fa6LPLR  =  21666.67;
-const fa7LPLR  =  27083.33;
-const fa8LPLR  =  32500.00;
-const fa9LPLR  =  54166.67;
-const fa10LPLR =  108333.33;
-const fa11LPLR =  162500.00;
-const fa12LPLR =  216666.67;
-const fa13LPLR =  325000.00;
-const fa14LPLR =  433333.33;
+const fa1LPLR  =  2000;
+const fa2LPLR  =  2300;
+const fa3LPLR  =  2500;
+const fa4LPLR  =  2600;
+const fa5LPLR  =  2700;
+const fa6LPLR  =  2800;
+const fa7LPLR  =  3000;
+const fa8LPLR  =  3000;
+const fa9LPLR  =  4166.67;
+const fa10LPLR =  8333.33;
+const fa11LPLR =  125000;
+const fa12LPLR =  16666.67;
+const fa13LPLR =  25000;
+const fa14LPLR =  33333.33;
 
 export {
     fa1LPLR,
@@ -32,7 +32,7 @@ export {
 }
 
 //Faixa de Funcionário 1 - 14 LP/LR
-const ff1LPLR = 200;
+const ff1LPLR = 600;
 const ff2LPLR = 1000;
 const ff3LPLR = 1600;
 const ff4LPLR = 3000;
@@ -66,19 +66,19 @@ export {
 
 //Faixa de Notas Fiscais 1 - 14 LP/LR + SIEG
 const fn1LPLR = 200 + 50;
-const fn2LPLR = 250 + 30;
-const fn3LPLR = 300 + 45;
-const fn4LPLR = 350 + 60;
-const fn5LPLR = 400 + 75;
+const fn2LPLR = 250 + 70;
+const fn3LPLR = 300 + 90;
+const fn4LPLR = 350 + 110;
+const fn5LPLR = 400 + 130;
 const fn6LPLR = 500 + 150;
-const fn7LPLR = 750 + 225;
-const fn8LPLR = 1000 + 300;
-const fn9LPLR = 1500 + 450;
-const fn10LPLR = 2000 + 600;
-const fn11LPLR = 2500 + 750;
-const fn12LPLR = 5000 + 1500;
-const fn13LPLR = 10000 + 3000;
-const fn14LPLR = 25000 + 7500;
+const fn7LPLR = 750 + 200;
+const fn8LPLR = 1000 + 250;
+const fn9LPLR = 1500 + 300;
+const fn10LPLR = 2000 + 350;
+const fn11LPLR = 2500 + 400;
+const fn12LPLR = 5000 + 450;
+const fn13LPLR = 10000 + 500;
+const fn14LPLR = 25000 + 750;
 
 export {
     fn1LPLR,
@@ -107,8 +107,8 @@ const fd6LPLR = 500;
 const fd7LPLR = 750;
 const fd8LPLR = 1000;
 const fd9LPLR = 1500;
-const fd10LPLR =2000;
-const fd11LPLR =2500;
+const fd10LPLR = 2000;
+const fd11LPLR = 2500;
 const fd12LPLR = 5000;
 const fd13LPLR = 10000;
 const fd14LPLR = 25000;

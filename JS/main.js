@@ -1370,7 +1370,7 @@ document.getElementById("validar").addEventListener("click", () => {
 
     console.log(total)
 
-    if(desconto.value > 20) {
+    if(desconto.value > 10) {
         alert("Desconto Indisponível")
         desconto.value = ""
         total = 0
@@ -1380,12 +1380,12 @@ document.getElementById("validar").addEventListener("click", () => {
     if(desconto.value == "" || desconto.value == 0){
         let totalFinal = document.getElementById("resultado")
         totalFinal.innerHTML = total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
-    }else if(desconto.value > 0 || desconto.value <= 20) {
+    }else if(desconto.value > 0 || desconto.value <= 10) {
         desconto = parseInt(desconto.value)
         let descontoValor = total * (desconto/100)
         let totalDescontado = total - descontoValor
         let resultadoDesconto = document.getElementById("resultado")
-        resultadoDesconto.innerHTML = `${totalDescontado.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} = ${total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} - ${descontoValor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} `
+        resultadoDesconto.innerHTML = `${total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} - ${descontoValor.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})} = ${totalDescontado.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`
     }
 
     escreverRegimeTributario(parseInt(regimeTributario.value))

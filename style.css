@@ -118,3 +118,8 @@ footer {
         transform: translateX(0);
     }
 }
+
+
+label {
+    font-weight: bold;
+}
