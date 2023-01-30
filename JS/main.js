@@ -1378,10 +1378,15 @@ document.getElementById("validar").addEventListener("click", () => {
     }
 
     if(desconto.value == "" || desconto.value == 0){
+        let markup = (0.35 * total)
         let totalFinal = document.getElementById("resultado")
+        total = total + markup;
         totalFinal.innerHTML = total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
-    }else if(desconto.value > 0 || desconto.value <= 10) {
+    }
+    else if(desconto.value > 0 || desconto.value <= 10) {
         desconto = parseInt(desconto.value)
+        let markup = (0.35 * total)
+        total = total + markup;
         let descontoValor = total * (desconto/100)
         let totalDescontado = total - descontoValor
         let resultadoDesconto = document.getElementById("resultado")
