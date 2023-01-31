@@ -6,6 +6,7 @@ html {
 :root {
     --text-color: #212529;
     --bg-color: rgb(233, 231, 231);
+    --underline-title: black; 
 }
 
 
@@ -24,6 +25,7 @@ body {
     flex-direction: column;
     min-height: 100%;
     background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;;
 }
 .hide {
     display: none;
@@ -31,6 +33,10 @@ body {
 
 .container label, .titulo {
     color: var(--text-color);
+}
+
+.titulo h4 {
+    border-bottom: 2px solid var(--text-color);
 }
 
 .verde {
@@ -55,6 +61,14 @@ body {
     -moz-box-shadow: 1px -3px 17px 0px rgba(0,0,0,0.37);
     box-shadow: 1px -3px 17px 0px rgba(0,0,0,0.37);
     animation: downtop 1s;
+}
+
+.resultadosNumeros {
+    text-align: left;
+}
+
+.resultados {
+    text-align: right;
 }
 
 .resultados span {
@@ -95,6 +109,11 @@ footer {
     position: relative;
 }
 
+
+.texto-esquerda {
+    text-align: left;
+}
+
 @keyframes downtop {
     0%{
       opacity: 0;
@@ -122,4 +141,11 @@ footer {
 
 label {
     font-weight: bold;
+}
+
+input {
+    padding: 0.5em 8em;
+    border: none;
+    text-align: center;
+    border-radius: 9999px;
 }

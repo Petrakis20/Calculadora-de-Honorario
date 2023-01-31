@@ -80,7 +80,7 @@ function escreverAtividadeEconomica(atividadeEconomica, regimeTributario) {
     if(regimeTributario != 3) {
         switch (atividadeEconomica) {
             case 1:
-                atividadeEconomica = "Indústria" + "  -   " + atvIndustriaLPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                atividadeEconomica =  atvIndustriaLPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -   " +"Indústria";
                 break;
             case 2:
                 atividadeEconomica = "Comércio Varejista";
@@ -96,7 +96,7 @@ function escreverAtividadeEconomica(atividadeEconomica, regimeTributario) {
     else if (regimeTributario == 3) {
         switch (atividadeEconomica) {
             case 1:
-                atividadeEconomica = "Indústria" + "  -   " + "R$" + atvIndustriaSN + ",00";
+                atividadeEconomica = atvIndustriaSN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})  + "  -   " +"Indústria";
                 break;
             case 2:
                 atividadeEconomica = "Comércio Varejista";
@@ -117,26 +117,26 @@ function escreverAtividadeEconomica(atividadeEconomica, regimeTributario) {
 function escreverBeneficioFiscal(regimeTributario, beneficioFiscal) {
     if (regimeTributario != 3) {
         switch (beneficioFiscal) {
+            case 0:
+                beneficioFiscal = "Não Possui" 
+                break;
             case 1:
-                beneficioFiscal = "RioLog" + "  -  " + rioLog.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                beneficioFiscal = rioLog.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "RioLog";
                 break;
             case 2:
-                beneficioFiscal = "Cartilha da Moda" + "  -  " + cartilhaModa.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                beneficioFiscal = cartilhaModa.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Cartilha da Moda";
                 break;
             case 3:
-                beneficioFiscal = "Compete" + "  -  " + compete.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                beneficioFiscal = compete.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Compete";
                 break;
             case 4:
-                beneficioFiscal = "Lei 6979(Indústria)" + "  -  " + leiInd.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                beneficioFiscal = leiInd.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Lei 6979(Indústria)";
                 break;
             case 5:
-                beneficioFiscal = "Fármacos" + "  -  " + farmacos.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                beneficioFiscal = farmacos.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Fármacos";
                 break;
             case 6:
-                beneficioFiscal = "Outros" + "  -  " + outrosF.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-                break;
-            case 7:
-                beneficioFiscal = "Não Possui" 
+                beneficioFiscal = outrosF.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Outros";
                 break;
         }
     }
@@ -152,7 +152,7 @@ function escreverLicitacao(licitacao, regimeTributario) {
     if(regimeTributario != 3){
         switch (licitacao) {
             case 1:
-                licitacao = "Sim" + "  -  " + licitacaoL.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                licitacao = licitacaoL.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Sim";
                 break;
             case 2:
                 licitacao = "Não"
@@ -162,7 +162,7 @@ function escreverLicitacao(licitacao, regimeTributario) {
     else if(regimeTributario == 3) {
         switch (licitacao) {
             case 1:
-                licitacao = "Sim" + "  -  " + licitacaoSimples.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                licitacao = licitacaoSimples.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Sim";
                 break;
             case 2:
                 licitacao = "Não"
@@ -177,46 +177,46 @@ function escreverFaturamentoAnual(faixaFaturamentoAnual, regimeTributario, ativi
     if(regimeTributario != 3){
         switch (faixaFaturamentoAnual) {
             case 1:
-                faixaFaturamentoAnual = "Faixa 1" + "  -  " + fa1LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa1LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 1";
                 break;
             case 2:
-                faixaFaturamentoAnual = "Faixa 2" + "  -  " + fa2LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa2LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 2";
                 break;
             case 3:
-                faixaFaturamentoAnual = "Faixa 3" + "  -  " + fa3LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa3LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 3";
                 break;
             case 4:
-                faixaFaturamentoAnual = "Faixa 4" + "  -  " + fa4LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa4LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 4";
                 break;
             case 5:
-                faixaFaturamentoAnual = "Faixa 5" + "  -  " + fa5LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa5LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 5";
                 break;
             case 6:
-                faixaFaturamentoAnual = "Faixa 6" + "  -  " + fa6LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa6LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 6";
                 break;
             case 7:
-                faixaFaturamentoAnual = "Faixa 7" + "  -  " + fa7LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa7LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 7";
                 break;
             case 8:
-                faixaFaturamentoAnual = "Faixa 8" + "  -  " + fa8LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa8LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 8";
                 break;
             case 9:
-                faixaFaturamentoAnual = "Faixa 9" + "  -  " + fa9LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa9LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 9";
                 break;
             case 10:
-                faixaFaturamentoAnual = "Faixa 10" + "  -  " + fa10LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa10LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 10";
                 break;
             case 11:
-                faixaFaturamentoAnual = "Faixa 11" + "  -  " + fa11LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa11LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 11";
                 break;
             case 12:
-                faixaFaturamentoAnual = "Faixa 12" + "  -  " + fa12LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa12LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 12";
                 break;
             case 13:
-                faixaFaturamentoAnual = "Faixa 13" + "  -  " + fa13LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa13LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 13";
                 break;
             case 14:
-                faixaFaturamentoAnual = "Faixa 14" + "  -  " + fa14LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFaturamentoAnual =fa14LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 14";
                 break;
         }
     }
@@ -224,84 +224,84 @@ function escreverFaturamentoAnual(faixaFaturamentoAnual, regimeTributario, ativi
         if(atividadeEconomica == 1){
             switch (faixaFaturamentoAnual) {
                 case 1:
-                    faixaFaturamentoAnual = "Faixa 1"+ "  -  " + fc1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = fc1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  "  + "Faixa 1" ;
                     break;
                 case 2:
-                    faixaFaturamentoAnual = "Faixa 2" + "  -  "+ fc2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = fc2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 2" ;
                     break;
                 case 3:
-                    faixaFaturamentoAnual = "Faixa 3" + "  -  " + fc3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = fc3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 3" ;
                     break;
                 case 4:
-                    faixaFaturamentoAnual = "Faixa 4" + "  -  " + fc4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = fc4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 4" ;
                     break;
                 case 5:
-                    faixaFaturamentoAnual = "Faixa 5" + "  -  " + fc5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = fc5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 5" ;
                     break;
                 case 6:
-                    faixaFaturamentoAnual = "Faixa 6" + "  -  " + fc6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = fc6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 6" ;
                     break;
                 case 7:
-                    faixaFaturamentoAnual = "Faixa 7" + "  -  " + fc7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = fc7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 7" ;
                     break;
                 case 8:
-                    faixaFaturamentoAnual = "Faixa 8" + "  -  "+ fc8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = fc8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 8" ;
                     break;
             }
         }
         else if(atividadeEconomica == 2 || atividadeEconomica == 3) {
             switch (faixaFaturamentoAnual) {
                 case 1:
-                   faixaFaturamentoAnual = "Faixa 1" + "  -  " + fc1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                   faixaFaturamentoAnual =fc1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 1";
                     break;
                 case 2:
-                   faixaFaturamentoAnual = "Faixa 2" + "  -  " + fc2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                   faixaFaturamentoAnual =fc2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 2";
                     break;
                 case 3:
-                   faixaFaturamentoAnual = "Faixa 3" + "  -  " + fc3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                   faixaFaturamentoAnual =fc3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 3";
                     break;
                 case 4:
-                   faixaFaturamentoAnual = "Faixa 4" + "  -  " + fc4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                   faixaFaturamentoAnual =fc4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 4";
                     break;
                 case 5:
-                   faixaFaturamentoAnual = "Faixa 5" + "  -  " + fc5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                   faixaFaturamentoAnual =fc5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 5";
                     break;
                 case 6:
-                   faixaFaturamentoAnual = "Faixa 6" + "  -  " + fc6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                   faixaFaturamentoAnual =fc6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 6";
                     break;
                 case 7:
-                   faixaFaturamentoAnual = "Faixa 7" + "  -  " + fc7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                   faixaFaturamentoAnual =fc7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 7";
                     break;
                 case 8:
-                   faixaFaturamentoAnual = "Faixa 8" + "  -  " + fc8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                   faixaFaturamentoAnual =fc8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 8";
                     break;
             }
         }
         else if(atividadeEconomica == 4) {
             switch (faixaFaturamentoAnual) {
                 case 1:
-                    faixaFaturamentoAnual = "Faixa 1" + "  -  " + ffs1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual =ffs1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})  + "  -  " + "Faixa 1";
                     break;
                 case 2:
-                    faixaFaturamentoAnual = "Faixa 2" + "  -  " +  ffs2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = ffs2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})  + "  -  " + "Faixa 2";
                     break;
                 case 3:
-                    faixaFaturamentoAnual = "Faixa 3" + "  -  " +  ffs3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = ffs3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})  + "  -  " + "Faixa 3";
                     break;
                 case 4:
-                    faixaFaturamentoAnual = "Faixa 4" + "  -  " +  ffs4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = ffs4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})  + "  -  " + "Faixa 4";
                     break;
                 case 5:
-                    faixaFaturamentoAnual = "Faixa 5" + "  -  " +  ffs5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = ffs5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})  + "  -  " + "Faixa 5";
                     break;
                 case 6:
-                    faixaFaturamentoAnual = "Faixa 6" + "  -  " +  ffs6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = ffs6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})  + "  -  " + "Faixa 6";
                     break;
                 case 7:
-                    faixaFaturamentoAnual = "Faixa 7" + "  -  " +  ffs7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = ffs7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})  + "  -  " + "Faixa 7";
                     break;
                 case 8:
-                    faixaFaturamentoAnual = "Faixa 8" + "  -  " +  ffs8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFaturamentoAnual = ffs8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})  + "  -  " + "Faixa 8";
                     break;
             }
         }
@@ -315,46 +315,46 @@ function escreverFuncionarios(faixaFuncionarios, regimeTributario, atividadeEcon
     if(regimeTributario != 3) {
         switch (faixaFuncionarios) {
             case 1:
-                faixaFuncionarios =  "Faixa 1" + "  -  " + ff1LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff1LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 1";
                 break;
             case 2:
-                faixaFuncionarios =  "Faixa 2" + "  -  " + ff2LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff2LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 2";
                 break;
             case 3:
-                faixaFuncionarios =  "Faixa 3" + "  -  " + ff3LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff3LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 3";
                 break;
             case 4:
-                faixaFuncionarios =  "Faixa 4" + "  -  " + ff4LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff4LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 4";
                 break;
             case 5:
-                faixaFuncionarios =  "Faixa 5" + "  -  " + ff5LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff5LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 5";
                 break;
             case 6:
-                faixaFuncionarios =  "Faixa 6" + "  -  " + ff6LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff6LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 6";
                 break;
             case 7:
-                faixaFuncionarios =  "Faixa 7" + "  -  " + ff7LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff7LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 7";
                 break;
             case 8:
-                faixaFuncionarios =  "Faixa 8" + "  -  " + ff8LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff8LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 8";
                 break;
             case 9:
-                faixaFuncionarios =  "Faixa 9" + "  -  " + ff9LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff9LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 9";
                 break;
             case 10:
-                faixaFuncionarios =  "Faixa 10" + "  -  " + ff10LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff10LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 10";
                 break;
             case 11:
-                faixaFuncionarios =  "Faixa 11" + "  -  " + ff11LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff11LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 11";
                 break;
             case 12:
-                faixaFuncionarios =  "Faixa 12" + "  -  " + ff12LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff12LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 12";
                 break;
             case 13:
-                faixaFuncionarios =  "Faixa 13" + "  -  " + ff13LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff13LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 13";
                 break;
             case 14:
-                faixaFuncionarios =  "Faixa 14" + "  -  " + ff14LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaFuncionarios =ff14LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})   + "  -  " + "Faixa 14";
                 break;
         }
     }
@@ -362,56 +362,56 @@ function escreverFuncionarios(faixaFuncionarios, regimeTributario, atividadeEcon
         if(atividadeEconomica == 1 || atividadeEconomica == 2 || atividadeEconomica == 3){
             switch (faixaFuncionarios) {
                 case 1:
-                    faixaFuncionarios = "Faixa 1"+ "  -  " + ffc1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios = ffc1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + " -  " + "Faixa 1" ;
                     break;
                 case 2:
-                    faixaFuncionarios = "Faixa 2" + "  -  "+ ffc2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios = ffc2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 2";
                     break;
                 case 3:
-                    faixaFuncionarios = "Faixa 3" + "  -  " + ffc3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios = ffc3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 3";
                     break;
                 case 4:
-                    faixaFuncionarios = "Faixa 4" + "  -  " + ffc4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios =ffc4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 4";
                     break;
                 case 5:
-                    faixaFuncionarios = "Faixa 5" + "  -  " + ffc5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios =ffc5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 5";
                     break;
                 case 6:
-                    faixaFuncionarios = "Faixa 6" + "  -  " + ffc6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios =ffc6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 6";
                     break;
                 case 7:
-                    faixaFuncionarios = "Faixa 7" + "  -  " + ffc7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios =ffc7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 7";
                     break;
                 case 8:
-                    faixaFuncionarios = "Faixa 8" + "  -  "+ ffc8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios =ffc8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 8";
                     break;
             }
         }
         else if(atividadeEconomica == 4) {
             switch (faixaFuncionarios) {
                 case 1:
-                    faixaFuncionarios = "Faixa 1" + "  -  " + ffs1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios =ffs1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 1";
                     break;
                 case 2:
-                    faixaFuncionarios = "Faixa 2" + "  -  " +  ffs2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios = ffs2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 2";
                     break;
                 case 3:
-                    faixaFuncionarios = "Faixa 3" + "  -  " +  ffs3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios = ffs3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 3";
                     break;
                 case 4:
-                    faixaFuncionarios = "Faixa 4" + "  -  " +  ffs4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios = ffs4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 4";
                     break;
                 case 5:
-                    faixaFuncionarios = "Faixa 5" + "  -  " +  ffs5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios = ffs5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 5";
                     break;
                 case 6:
-                    faixaFuncionarios = "Faixa 6" + "  -  " +  ffs6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios = ffs6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 6";
                     break;
                 case 7:
-                    faixaFuncionarios = "Faixa 7" + "  -  " +  ffs7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios = ffs7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 7";
                     break;
                 case 8:
-                    faixaFuncionarios = "Faixa 8" + "  -  " +  ffs8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaFuncionarios = ffs8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " +  "Faixa 8";
                     break;
             }
         }
@@ -425,46 +425,46 @@ function escreverNotas(faixaNotas, regimeTributario, atividadeEconomica) {
     if(regimeTributario == 1 || regimeTributario == 2) {
         switch (faixaNotas) {
             case 1:
-                faixaNotas = "Faixa 1" + "  -  " +  fn1LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn1LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 1";
                 break;
             case 2:
-                faixaNotas = "Faixa 2" + "  -  " +  fn2LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn2LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 2";
                 break;
             case 3:
-                faixaNotas = "Faixa 3" + "  -  " +  fn3LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn3LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 3";
                 break;
             case 4:
-                faixaNotas = "Faixa 4" + "  -  " +  fn4LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn4LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 4";
                 break;
             case 5:
-                faixaNotas = "Faixa 5" + "  -  " +  fn5LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn5LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 5";
                 break;
             case 6:
-                faixaNotas = "Faixa 6" + "  -  " +  fn6LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn6LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 6";
                 break;
             case 7:
-                faixaNotas = "Faixa 7" + "  -  " +  fn7LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn7LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 7";
                 break;
             case 8:
-                faixaNotas = "Faixa 8" + "  -  " +  fn8LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn8LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 8";
                 break;
             case 9:
-                faixaNotas = "Faixa 9" + "  -  " +  fn9LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn9LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 9";
                 break;
             case 10:
-                faixaNotas = "Faixa 10" + "  -  " +  fn10LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn10LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 10";
                 break;
             case 11:
-                faixaNotas = "Faixa 11" + "  -  " +  fn11LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn11LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 11";
                 break;
             case 12:
-                faixaNotas = "Faixa 12" + "  -  " +  fn12LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn12LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 12";
                 break;
             case 13:
-                faixaNotas = "Faixa 13" + "  -  " +  fn13LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn13LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 13";
                 break;
             case 14:
-                faixaNotas = "Faixa 14" + "  -  " +  fn14LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaNotas =  fn14LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 14";
                 break;
         }
     }
@@ -472,56 +472,56 @@ function escreverNotas(faixaNotas, regimeTributario, atividadeEconomica) {
         if(atividadeEconomica == 1 || atividadeEconomica == 2 || atividadeEconomica == 3 ){
             switch (faixaNotas) {
                 case 1:
-                    faixaNotas = "Faixa 1" + "  -  " + fnc1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fnc1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 1";
                     break;
                 case 2:
-                    faixaNotas = "Faixa 2" + "  -  " + fnc2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fnc2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 2";
                     break;
                 case 3:
-                    faixaNotas = "Faixa 3" + "  -  " + fnc3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fnc3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 3";
                     break;
                 case 4:
-                    faixaNotas = "Faixa 4" + "  -  " + fnc4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fnc4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 4";
                     break;
                 case 5:
-                    faixaNotas = "Faixa 5" + "  -  " + fnc5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fnc5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 5";
                     break;
                 case 6:
-                    faixaNotas = "Faixa 6" + "  -  " + fnc6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fnc6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 6";
                     break;
                 case 7:
-                    faixaNotas = "Faixa 7" + "  -  " + fnc7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fnc7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 7";
                     break;
                 case 8:
-                    faixaNotas = "Faixa 8" + "  -  " + fnc8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fnc8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 8";
                     break;
             }
         }
         else if(atividadeEconomica == 4){
             switch (faixaNotas) {
                 case 1:
-                    faixaNotas = "Faixa 1" + "  -  " + fns1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fns1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 1";
                     break;
                 case 2:
-                    faixaNotas = "Faixa 2" + "  -  " + fns2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fns2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 2";
                     break;
                 case 3:
-                    faixaNotas = "Faixa 3" + "  -  " + fns3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fns3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 3";
                     break;
                 case 4:
-                    faixaNotas = "Faixa 4" + "  -  " + fns4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fns4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 4";
                     break;
                 case 5:
-                    faixaNotas = "Faixa 5" + "  -  " + fns5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fns5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 5";
                     break;
                 case 6:
-                    faixaNotas = "Faixa 6" + "  -  " + fns6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fns6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 6";
                     break;
                 case 7:
-                    faixaNotas = "Faixa 7" + "  -  " + fns7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fns7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 7";
                     break;
                 case 8:
-                    faixaNotas = "Faixa 8" + "  -  " + fns8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaNotas = fns8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 8";
                     break;
             }
         }
@@ -535,46 +535,46 @@ function escreverDoc(faixaDocumentos, regimeTributario, atividadeEconomica) {
     if(regimeTributario == 1 || regimeTributario == 2) {
         switch (faixaDocumentos) {
             case 1:
-                faixaDocumentos = "Faixa 1" + "  -  " +  fd1LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd1LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 1";
                 break;
             case 2:
-                faixaDocumentos = "Faixa 2" + "  -  " +  fd2LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd2LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 2";
                 break;
             case 3:
-                faixaDocumentos = "Faixa 3" + "  -  " +  fd3LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd3LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 3";
                 break;
             case 4:
-                faixaDocumentos = "Faixa 4" + "  -  " +  fd4LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd4LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 4";
                 break;
             case 5:
-                faixaDocumentos = "Faixa 5" + "  -  " +  fd5LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd5LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 5";
                 break;
             case 6:
-                faixaDocumentos = "Faixa 6" + "  -  " +  fd6LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd6LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 6";
                 break;
             case 7:
-                faixaDocumentos = "Faixa 7" + "  -  " +  fd7LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd7LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 7";
                 break;
             case 8:
-                faixaDocumentos = "Faixa 8" + "  -  " +  fd8LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd8LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 8";
                 break;
             case 9:
-                faixaDocumentos = "Faixa 9" + "  -  " +  fd9LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd9LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 9" ;
                 break;
             case 10:
-                faixaDocumentos = "Faixa 10" + "  -  " +  fd10LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd10LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 10" ;
                 break;
             case 11:
-                faixaDocumentos = "Faixa 11" + "  -  " +  fd11LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos = fd11LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 11";
                 break;
             case 12:
-                faixaDocumentos = "Faixa 12" + "  -  " +  fd12LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd12LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 12";  
                 break;
             case 13:
-                faixaDocumentos = "Faixa 13" + "  -  " +  fd13LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd13LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 13";  
                 break;
             case 14:
-                faixaDocumentos = "Faixa 14" + "  -  " +  fd14LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                faixaDocumentos =  fd14LPLR.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})+ "  -  " + "Faixa 14";  
                 break;
         }
     }
@@ -582,56 +582,56 @@ function escreverDoc(faixaDocumentos, regimeTributario, atividadeEconomica) {
         if(atividadeEconomica == 1 || atividadeEconomica == 2 || atividadeEconomica == 3){
             switch (faixaDocumentos) {
                 case 1:
-                    faixaDocumentos = "Faixa 1" + "  -  " +  fdc1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fdc1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 1";
                     break;
                 case 2:
-                    faixaDocumentos = "Faixa 2" + "  -  " +  fdc2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fdc2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 2";
                     break;
                 case 3:
-                    faixaDocumentos = "Faixa 3" + "  -  " +  fdc3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fdc3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 3";
                     break;
                 case 4:
-                    faixaDocumentos = "Faixa 4" + "  -  " +  fdc4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fdc4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 4";
                     break;
                 case 5:
-                    faixaDocumentos = "Faixa 5" + "  -  " +  fdc5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fdc5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 5";
                     break;
                 case 6:
-                    faixaDocumentos = "Faixa 6" + "  -  " +  fdc6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fdc6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 6";
                     break;
                 case 7:
-                    faixaDocumentos = "Faixa 7" + "  -  " +  fdc7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fdc7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 7";
                     break;
                 case 8:
-                    faixaDocumentos = "Faixa 8" + "  -  " +  fdc8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fdc8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 8";
                     break;
             }
         }
         else if(atividadeEconomica == 4){
             switch (faixaDocumentos) {
                 case 1:
-                    faixaDocumentos = "Faixa 1" + "  -  " +  fds1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fds1SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 1";
                     break;
                 case 2:
-                    faixaDocumentos = "Faixa 2" + "  -  " +  fds2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fds2SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 2";
                     break;
                 case 3:
-                    faixaDocumentos = "Faixa 3" + "  -  " +  fds3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fds3SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 3";
                     break;
                 case 4:
-                    faixaDocumentos = "Faixa 4" + "  -  " +  fds4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fds4SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 4";
                     break;
                 case 5:
-                    faixaDocumentos = "Faixa 5" + "  -  " +  fds5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fds5SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 5";
                     break;
                 case 6:
-                    faixaDocumentos = "Faixa 6" + "  -  " +  fds6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fds6SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 6";
                     break;
                 case 7:
-                    faixaDocumentos = "Faixa 7" + "  -  " +  fds7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fds7SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 7";
                     break;
                 case 8:
-                    faixaDocumentos = "Faixa 8" + "  -  " +  fds8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+                    faixaDocumentos =  fds8SN.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'}) + "  -  " + "Faixa 8";
                     break;
             }
         }
@@ -1279,17 +1279,17 @@ document.getElementById("validar").addEventListener("click", () => {
     let desconto                = document.getElementById("desconto");
 
     
-    if(parseInt(regimeTributario.value) < 1 || parseInt(regimeTributario.value) > 3 || regimeTributario.value == ""){
-        alert("Regime Tributário Inválido")
-        regimeTributario.value = ""
-        return false
-    }
-    else if(parseInt(atividadeEconomica.value) < 1 || parseInt(atividadeEconomica.value) > 4 || atividadeEconomica.value == "") {
+    if(parseInt(atividadeEconomica.value) < 1 || parseInt(atividadeEconomica.value) > 4 || atividadeEconomica.value == "") {
         alert("Atividade Econômica Inválida")
         atividadeEconomica.value = ""
         return false
     }
-    else if(parseInt(beneficioFiscal.value) < 1 || parseInt(beneficioFiscal.value) > 7 || beneficioFiscal.value == ""){
+    else if(parseInt(regimeTributario.value) < 1 || parseInt(regimeTributario.value) > 3 || regimeTributario.value == ""){
+        alert("Regime Tributário Inválido")
+        regimeTributario.value = ""
+        return false
+    }
+    else if(parseInt(beneficioFiscal.value) < 0 || parseInt(beneficioFiscal.value) > 6 || beneficioFiscal.value == ""){
         alert("Benefício Fiscal Inválido")
         beneficioFiscal.value = ""
         return false
