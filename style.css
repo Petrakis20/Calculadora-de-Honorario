@@ -149,3 +149,9 @@ input {
     text-align: center;
     border-radius: 9999px;
 }
+
+@media (max-width: 414px) {
+    .titulo-calc {
+        display: none;
+    }
+}
