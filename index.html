@@ -47,7 +47,7 @@
 
         <div class="container mb-3">
             <div class="row align-items-center">
-              <div class="col">
+              <div class="col-12 mb-2">
                 <label for="atividadeEconomica" class="text-start">Atividade Econômica:&nbsp;</label>
               </div>
               <div class="col">
@@ -62,7 +62,7 @@
           </div>
         <div class="container mb-3">
             <div class="row align-items-center">
-              <div class="col">
+              <div class="col-12 mb-2">
                 <label class="" for="regimeTributario">Regime Tributário:&nbsp;</label>
               </div>
               <div class="col">
@@ -78,7 +78,7 @@
 
         <div class="container mb-3">
             <div class="row align-items-center">
-              <div class="col">
+              <div class="col-12">
                 <label for="beneficioFiscal">Benefício Fiscal:&nbsp;</label>
               </div>
               <div class="col">
@@ -97,89 +97,99 @@
               <div class="col">
                 <label for="licitacao">Licitação:&nbsp; &nbsp;</label>
               </div>
-              <div class="col text-center">
+              <div class="col">
                 <input type="radio" name="licitacao" id="licitacaoS">
                 <label for="licitacaoS">Sim &nbsp;</label>
                 <input type="radio" name="licitacao" id="licitacaoN">
                 <label for="licitacaoN">Não &nbsp;</label>
               </div>
-              <div class="col">
+              <div class="col desapareca">
               </div>
             </div>
           </div>
 
           <div class="container mb-3">
             <div class="row align-items-center">
-              <div class="col">
+              <div class="col-12">
                 <label for="faturamentoAnual">Faturamento Anual:&nbsp;</label>
               </div>
               <div class="col">
                 <input type="number" min="1" max="14" id="faturamentoAnual" class="form-control">
               </div>
-              <div class="col-md-auto">
+              <div class="col-md-auto mt-2">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaFaturamentoPR">
                     Faturamento LP/LR
                 </button>
+            </div>
+            <div class="col-md-auto mt-2">
                 <button id="faturamentoServicoSN" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaFaturamentoServicoSN">
                     Faturamento SN
-            </button>
-              </div>
+                </button>
+            </div>
+                
+              
             </div>
           </div>
         
           <div class="container mb-3">
             <div class="row align-items-center">
-              <div class="col">
-                <label for="faixaFuncionarios">Número de Funcionários:&nbsp;</label>
-              </div>
-              <div class="col">
-                <input type="number" min="1" max="14" id="faixaFuncionarios" class="form-control">
-              </div>
-              <div class="col-md-auto">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaNumFuncPR">
-                    Funcionários LP/LR
-                </button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaNumFuncSN">
-                    Funcionários SN
-                </button>
-              </div>
+                <div class="col-12">
+                    <label for="faixaFuncionarios">Número de Funcionários:&nbsp;</label>
+                </div>
+                <div class="col">
+                    <input type="number" min="1" max="14" id="faixaFuncionarios" class="form-control">
+                </div>
+                <div class="col-md-auto mt-2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaNumFuncPR">
+                        Funcionários LP/LR
+                    </button>
+                </div>
+                <div class="col-md-auto mt-2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaNumFuncSN">
+                        Funcionários SN
+                    </button>
+                </div>
             </div>
           </div>
 
           <div class="container mb-3">
             <div class="row align-items-center">
-              <div class="col">
+              <div class="col-12">
                 <label for="faixaNotas">Notas Ficais Mensais:&nbsp;</label>
               </div>
               <div class="col">
                 <input type="number" min="1" max="14" id="faixaNotas" class="form-control">
               </div>
-              <div class="col-md-auto">
+              <div class="col-md-auto mt-2">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaNotasPR">
-                    Volumetria de <br> Notas Fiscais LP/LR
+                    Notas Fiscais LP/LR
                 </button>
+             </div>
+             <div class="col-md-auto mt-2">
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaNotasSN">
-                    Volumetria de <br> Notas Fiscais SN
+                    Notas Fiscais SN
                 </button>
-              </div>
+            </div>
             </div>
           </div>
 
           <div class="container mb-3">
             <div class="row align-items-center">
-              <div class="col">
+              <div class="col-12">
                 <label for="faixaDocumentos">Doc de Despesas Mensais:&nbsp;</label>
               </div>
               <div class="col">
                 <input type="number" min="1" max="14" id="faixaDocumentos" class="form-control">
               </div>
-              <div class="col-md-auto">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaDocPR">
-                    Documentos de<br> Despesas LP/LR
-                </button>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaDocSN">
-                    Documentos de<br> Despesas SN
-                </button>
+              <div class="col-md-auto mt-2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaDocPR">
+                        Documentos LP/LR
+                    </button>
+             </div>
+                <div class="col-md-auto mt-2">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tabelaDocSN">
+                        Documentos SN
+                    </button>
               </div>
             </div>
           </div>
@@ -192,7 +202,7 @@
               <div class="col">
                 <input type="number" name="" id="desconto" min="0" max="10" class="form-control">
               </div>
-              <div class="col">
+              <div class="col desapareca">
               </div>
             </div>
           </div>
@@ -411,10 +421,6 @@
                     <tr>
                         <th scope="row">6</th>
                         <td>Outros</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">7</th>
-                        <td>Não Possui</td>
                     </tr>
                     </tbody>
                 </table>
@@ -1243,6 +1249,7 @@
 
     
     <script src="./JS/main.js" type="module"></script>
+    <script src="./JS/mobile.js"></script>
 
 </body>
 </html>

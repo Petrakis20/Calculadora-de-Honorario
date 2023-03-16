@@ -155,3 +155,24 @@ input {
         display: none;
     }
 }
+
+@media (max-width: 414px){
+    .desapareca {
+        display: none;
+    }
+    .calculadora {
+        border: none;
+        position: relative;
+    }
+    .lua, .sol {
+        position: absolute;
+        top: 0;
+        right: 5%;
+    } 
+}
+
+/* @media (max-width: 768px) {
+    body {
+      background-color: red;
+    }
+  } */
