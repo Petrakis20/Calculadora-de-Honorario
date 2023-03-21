@@ -58,9 +58,11 @@ import { fds1SN, fds2SN, fds3SN, fds4SN, fds5SN, fds6SN, fds7SN, fds8SN } from "
 
 
 
-//Validação do form
+
 
 let total = 0;
+
+//FUNÇÕES PARA ESCREVER O RESULTADO NA TELA
 function escreverRegimeTributario(regimeTributario) {
     switch (regimeTributario) {
         case 1:
@@ -639,7 +641,9 @@ function escreverDoc(faixaDocumentos, regimeTributario, atividadeEconomica) {
     let resultadoDoc= document.getElementById("resultadoDDM")
     resultadoDoc.innerHTML = faixaDocumentos;
 }
+//---------------------------------------------------------//
 
+//FUNÇÕES DE CÁLCULO
 function calcularLPLR(atividadeEconomica, beneficioFiscal, licitacao, faixaFaturamentoAnual, faixaFuncionarios, faixaNotas, faixaDocumentos) {    
     switch (atividadeEconomica) {
         case 1:
@@ -1222,7 +1226,8 @@ function calcularSimplesServico(licitacao, faixaFaturamentoAnual, faixaFuncionar
     }
     return total;
 }
-
+//---------------------------------------------------------//
+//FUNÇÃO PARA ZERAR A CALCULADORA
 document.getElementById("limpar").addEventListener("click", zerar)
 function zerar() {
     regimeTributario.value = "" 
@@ -1262,8 +1267,9 @@ function zerar() {
     resultadoDoc.innerHTML = "";
 
 }
+//---------------------------------------------------------//
 
-
+//VALIDAÇÃO DO FORMULÁRIO
 
 document.getElementById("validar").addEventListener("click", () => {
     let licitacao
@@ -1404,6 +1410,8 @@ document.getElementById("validar").addEventListener("click", () => {
 
     total = 0
 })
+//---------------------------------------------------------//
+
 
 //DARK MODE
 const lua = document.querySelector('#lua')
