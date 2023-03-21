@@ -71,6 +71,14 @@ body {
     text-align: right;
 }
 
+.resultados h5 {
+    font-size: 18px;
+}
+
+.resultadosNumeros span {
+    font-size: 16px;
+}
+
 .resultados span {
     color: rgb(255, 255, 255);
     font-weight: 400;
